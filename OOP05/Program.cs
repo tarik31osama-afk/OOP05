@@ -4,6 +4,9 @@
     {
         static void Main(string[] args)
         {
+            #region Assignment04
+
+            
 
             DeliveryCenter deliveryCenter = new DeliveryCenter();
             Console.WriteLine("enter the center name:");
@@ -172,6 +175,22 @@
             {
                 Console.WriteLine(insurables[i].CalculateInsurance());
             }
+            #endregion
+
+            #region part01 assignment05
+
+            #region q1
+            //a) Both variables refer to the same object in memory
+            //b) No. It only copies the reference to the existing object
+            //c) Copying an object creates a new object in memory but copying its reference makes two variables point to the same object
+
+            #endregion
+
+
+            #endregion
+
+
+
 
         }
     }
