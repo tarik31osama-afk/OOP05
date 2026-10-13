@@ -211,6 +211,16 @@
             //d) No It cannot directly access private members because it is not actually part of the original class
             #endregion
 
+            #region q5
+
+            //a) A Partial Class allows a single class to be divided into multiple parts
+            //b) To organize code and improve readability
+            //d) is a method whose declaration and implementation can be written in different parts of a partial class
+            //e) If the partial method is optional, the compiler removes its declaration and calls. Otherwise, a compilation error occurs
+
+
+            #endregion
+
             #endregion
 
 
