@@ -7,6 +7,7 @@
         private int weight;
         private decimal deliveryFee;
 
+        
         public DeliveryAddress Destination { get; set; }
 
         public string TrackingCode
