@@ -1,6 +1,6 @@
 ﻿namespace OOP05
 {
-    public struct DeliveryAddress
+    public class DeliveryAddress
     {
         public string City;
         public string Street;
@@ -13,7 +13,10 @@
             BuildingNumber = buildingNumber;
 
         }
+        public DeliveryAddress()
+        {
 
+        }
         public string GetFullAddress()
         {
             return $"{BuildingNumber},{Street},{City}";

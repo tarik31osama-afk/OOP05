@@ -223,6 +223,55 @@
 
             #endregion
 
+            #region part02
+            Shipment sh01 = standardShipment;
+            Shipment sh02 = sh01;
+            Console.WriteLine("Original Shipment : " + sh01.TrackingCode);
+            Console.WriteLine("Assigned Shipment : " + sh02.TrackingCode);
+            Console.WriteLine(ReferenceEquals(sh01, sh02));
+
+            Shipment shallow = standardShipment.ShallowCopy();
+            
+            Console.WriteLine("Original Shipment : " + sh01.Destination.City);
+            Console.WriteLine("copied : " + shallow.Destination.City);
+
+            shallow.Destination.City = "qina";
+
+            Console.WriteLine("Original Shipment : " + sh01.Destination.City);
+            Console.WriteLine("copied : " + shallow.Destination.City);
+
+            Console.WriteLine("Same DeliveryAddress Object : " +ReferenceEquals(sh01.Destination, shallow.Destination));
+
+            Shipment deep= standardShipment.DeepCopy();
+
+            Console.WriteLine("Original Shipment : " + sh01.Destination.City);
+            Console.WriteLine("copied : " + deep.Destination.City);
+            shallow.Destination.City = "alex";
+            Console.WriteLine("Original Shipment : " + sh01.Destination.City);
+            Console.WriteLine("copied : " + deep.Destination.City);
+
+            Console.WriteLine("Same DeliveryAddress Object : " + ReferenceEquals(sh01.Destination, deep.Destination));
+
+            Console.WriteLine(standardShipment.GetSummary());
+            Console.WriteLine(expressShipment.GetSummary());
+            Console.WriteLine(internationalShipment.GetSummary());
+
+            Console.WriteLine(standardShipment.TrackingCode + " Is Delivered : " + standardShipment.IsDelivered());
+
+            Console.WriteLine(internationalShipment.TrackingCode + " Is Delivered : " +internationalShipment.IsDelivered());
+
+            standardShipment.UpdateTrackingStatus("Out For Delivery");
+
+            DeliveryUtilities.PrintSystemTitle();
+            DeliveryUtilities.PrintSeparator();
+
+            Console.WriteLine("Total Shipments Created : " +Shipment.GetTotalShipmentsCreated());
+
+            standardShipment.UpdateTrackingStatus("Delivered");
+
+
+            #endregion
+
 
 
 

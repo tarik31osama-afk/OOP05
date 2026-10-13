@@ -25,7 +25,7 @@
             Console.WriteLine($"Estimated Cost: {EstimatedCost}");
         }
 
-        public  string GetTrackingStatus()
+        public override string GetTrackingStatus()
         {
             return $"Shipment {TrackingCode} is Ready.";
         }

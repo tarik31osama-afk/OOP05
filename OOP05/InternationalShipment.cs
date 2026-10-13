@@ -68,7 +68,7 @@
 
         }
     
-        public string GetTrackingStatus()
+        public override string GetTrackingStatus()
         {
             return $"Shipment {TrackingCode} has been Delivered.";
         }

@@ -41,7 +41,7 @@
             Console.WriteLine($"Estimated Cost: {EstimatedCost}");
             Console.WriteLine($"Extra Fee: {ExtraFee}");
         }
-        public string GetTrackingStatus()
+        public override string GetTrackingStatus()
         {
             return $"Shipment {TrackingCode} is Out for Delivery.";
         }

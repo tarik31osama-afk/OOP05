@@ -1,13 +1,13 @@
 ﻿namespace OOP05
-{ 
-    public abstract class Shipment
+{
+    public abstract partial class Shipment :ITrackable
     {
         private string trackingCode;
         private string description;
         private int weight;
         private decimal deliveryFee;
 
-        
+        public static int TotalShipmentsCreated ;
         public DeliveryAddress Destination { get; set; }
 
         public string TrackingCode
@@ -91,7 +91,7 @@
             Weight = weight;
             DeliveryFee = deliveryFee;
             Destination = destination;
-
+            TotalShipmentsCreated++;
         }
         public void UpdateDeliveryFee(decimal newFee)
         {
@@ -115,8 +115,47 @@
 
 
         public abstract void PrintShipment();
-        
-           
-        
+
+        public Shipment CopyShipment()
+        {
+            return (Shipment)this.MemberwiseClone();
+
+        }
+
+        public Shipment ShallowCopy()
+        {
+            return (Shipment)this.MemberwiseClone();
+
+        }
+
+        public Shipment DeepCopy()
+        {
+
+          Shipment copy= (Shipment)MemberwiseClone();
+
+            copy.Destination = new DeliveryAddress
+            {
+                City = this.Destination.City,
+                Street = this.Destination.Street,
+                BuildingNumber = this.Destination.BuildingNumber,
+
+            };
+            return copy;
+
+        }
+         static Shipment()
+        {
+            Console.WriteLine("Shipment System Initialized");
+            TotalShipmentsCreated= 0;
+        }
+
+       public static int GetTotalShipmentsCreated()
+        {
+            return TotalShipmentsCreated;
+        }
+        partial void OnTrackingStatusChanged(string newStatus)
+        {
+            Console.WriteLine("Tracking status changed to: " + newStatus);
+        }
     }
 }
