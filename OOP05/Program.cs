@@ -204,6 +204,13 @@
 
             #endregion
 
+            #region q4
+            //a)An Extension Method allows us to add new method-like functionality to an existing type without modifying its original code or inheriting from it
+            //b) this
+            //c) It must be declared in static class
+            //d) No It cannot directly access private members because it is not actually part of the original class
+            #endregion
+
             #endregion
 
 
