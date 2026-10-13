@@ -186,6 +186,14 @@
 
             #endregion
 
+            #region q2
+            //a) A Shallow Copy creates a new object but shares references to nested objects with the original
+            //b) A Deep Copy creates a new object and independent copies of its nested objects
+            //c) Their references are copied so both objects refer to the same object
+            //d) Independent copies of object so changes to one do not affect the other
+            //e)When copying a shipment that contains a delivery address,
+            //  Deep Copy is safer because changing the copied shipment's address will not affect the original shipment
+            #endregion
 
             #endregion
 
@@ -195,3 +203,4 @@
         }
     }
 }
+ 
