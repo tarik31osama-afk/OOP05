@@ -195,6 +195,15 @@
             //  Deep Copy is safer because changing the copied shipment's address will not affect the original shipment
             #endregion
 
+            #region q3
+
+            //a) A static field belongs to the class and is shared by all objects but instance field belongs to each object
+            //b) A static method belongs to the class and can be called without creating an object ,no it cannot directly access instance members
+            //c) A static constructor initializes the class's static data. It runs automatically only once, before the class is first used
+            //d) A static class contains only static members, No you cannot create an object from a static class
+
+            #endregion
+
             #endregion
 
 
